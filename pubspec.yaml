@@ -34,7 +34,21 @@ dev_dependencies:
 
 # The following section is specific to Flutter.
 flutter:
+  fonts:
+    - family: vazir
+      fonts:
+        - asset: assets/fonts/Vazir-Bold.ttf
+          weight: 900
+        - asset: assets/fonts/Vazir-Light.ttf
+          weight: 500
+        - asset: assets/fonts/Vazir-Medium.ttf
+          weight: 100
 
+
+  assets:
+    - assets/images/ambol.png
+    - assets/images/cityView.jpg
+    - assets/images/illustration.png
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.

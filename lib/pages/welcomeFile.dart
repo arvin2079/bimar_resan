@@ -1,9 +1,9 @@
 import 'package:bimarresan/components/nextButton.dart';
 import 'package:bimarresan/constants.dart';
 import 'package:flutter/material.dart';
-import 'dart:math';
-
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
+import 'dart:math';
 
 class WelcomePage extends StatelessWidget {
 

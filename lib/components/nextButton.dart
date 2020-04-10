@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 
 class NextButton extends StatelessWidget {
-  const NextButton({this.contentColor, this.color, this.icon, this.text});
+  const NextButton({this.onPressed, this.contentColor, this.color, this.icon, this.text});
   final IconData icon;
   final String text;
   final Color color;
-  final contentColor;
+  final Color contentColor;
+  final Function onPressed;
 
   @override
   Widget build(BuildContext context) {
     return FlatButton(
-      onPressed: () {},
+      onPressed: onPressed,
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(40),

@@ -1,5 +1,6 @@
 import 'package:bimarresan/components/nextButton.dart';
 import 'package:bimarresan/constants.dart';
+import 'package:bimarresan/pages/signIn.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
@@ -34,7 +35,7 @@ class WelcomePage extends StatelessWidget {
                       child: Image.asset('assets/images/ambol.png')),
                 ),
                 Positioned(
-                  left: 120,
+                  right: 20,
                   bottom: MediaQuery.of(context).size.height/2 - 110,
                   child: Text(
                     'به بیمار رسان\nخوش اومدی',
@@ -58,6 +59,11 @@ class WelcomePage extends StatelessWidget {
                   right: -18,
                   bottom: MediaQuery.of(context).size.height/2 - 220,
                   child: NextButton(
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) {
+                        return SignInPage();
+                      }));
+                    },
                     text: 'بعدی',
                     icon: Icons.arrow_forward_ios,
                     color: Colors.white,

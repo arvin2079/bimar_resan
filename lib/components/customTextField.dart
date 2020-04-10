@@ -21,6 +21,7 @@ class CustomTextField extends StatelessWidget {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: TextField(
+        cursorColor: borderColor,
         focusNode: focusNode,
         keyboardType: inputType,
         textAlign: TextAlign.right,

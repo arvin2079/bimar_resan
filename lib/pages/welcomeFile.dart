@@ -60,6 +60,8 @@ class WelcomePage extends StatelessWidget {
                   child: NextButton(
                     text: 'بعدی',
                     icon: Icons.arrow_forward_ios,
+                    color: Colors.white,
+                    contentColor: Colors.black,
                   )
                 )
               ],

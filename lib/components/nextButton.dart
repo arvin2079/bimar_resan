@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
 class NextButton extends StatelessWidget {
-  const NextButton({this.icon, this.text});
+  const NextButton({this.contentColor, this.color, this.icon, this.text});
   final IconData icon;
   final String text;
+  final Color color;
+  final contentColor;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +17,7 @@ class NextButton extends StatelessWidget {
             bottomLeft: Radius.circular(40),
           )
       ),
-      color: Colors.white,
+      color: color,
       child: Container(
         height: 60,
         width: 150,
@@ -28,7 +30,7 @@ class NextButton extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'vazir',
                   fontWeight: FontWeight.w500,
-                  color: Colors.black,
+                  color: contentColor,
                   fontSize: 20,
                 ),
               ),
@@ -36,7 +38,7 @@ class NextButton extends StatelessWidget {
             Spacer(),
             Icon(
               icon,
-              color: Colors.black,
+              color: contentColor,
             )
           ],
         ),

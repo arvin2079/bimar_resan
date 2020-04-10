@@ -3,9 +3,13 @@ import 'package:bimarresan/constants.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';
 
+import 'package:flutter/services.dart';
+
 class WelcomePage extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
+    setStatusBar();
     return Scaffold(
       body: Center(
         child: Container(
@@ -64,5 +68,12 @@ class WelcomePage extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void setStatusBar() {
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      statusBarColor: Colors.black.withOpacity(0.1),
+      statusBarIconBrightness: Brightness.light,
+    ));
   }
 }

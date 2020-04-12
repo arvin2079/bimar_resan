@@ -1,18 +1,17 @@
 import 'package:bimarresan/components/customTextField.dart';
 import 'package:bimarresan/components/nextButton.dart';
 import 'package:bimarresan/components/shapes.dart';
-import 'package:bimarresan/pages/signUp.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/widgets.dart';
 import '../constants.dart';
 
-class SignInPage extends StatefulWidget {
+class SignUpPage extends StatefulWidget {
   @override
-  _SignInPageState createState() => _SignInPageState();
+  _SignUpPageState createState() => _SignUpPageState();
 }
 
-class _SignInPageState extends State<SignInPage> {
+class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -64,7 +63,7 @@ class _SignInPageState extends State<SignInPage> {
 
   Positioned _buildSignInForm(BuildContext context) {
     return Positioned(
-              top: 180.0,
+              top: 180,
               bottom: 0.0,
               child: SingleChildScrollView(
                 child: Container(
@@ -75,7 +74,7 @@ class _SignInPageState extends State<SignInPage> {
                     children: <Widget>[
                       SizedBox(height: 20),
                       Container(
-                        height: 230,
+                        height: 290,
                         width: MediaQuery.of(context).size.width - 20,
                         child: Row(
                           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -101,7 +100,7 @@ class _SignInPageState extends State<SignInPage> {
                                             CrossAxisAlignment.stretch,
                                         children: <Widget>[
                                           Text(
-                                            'ورود',
+                                            'ثبت نام',
                                             textAlign: TextAlign.right,
                                             style: TextStyle(
                                                 fontFamily: 'vazir',
@@ -109,11 +108,15 @@ class _SignInPageState extends State<SignInPage> {
                                                 fontSize: 33),
                                           ),
                                           CustomTextField(
+                                            labelText: 'نام و نام خانوادگی',
+                                            borderColor: thirdColor,
+                                          ),
+                                          CustomTextField(
                                             labelText: 'شماره همراه',
                                             borderColor: thirdColor,
                                           ),
                                           CustomTextField(
-                                            labelText: 'رمز عبور',
+                                            labelText: 'کد ملی',
                                             borderColor: thirdColor,
                                           ),
                                         ],
@@ -136,13 +139,14 @@ class _SignInPageState extends State<SignInPage> {
 
   Positioned _buildSwitchPageButton(BuildContext context) {
     return Positioned(
+//                bottom: 40,
       top: MediaQuery.of(context).size.height - 90,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         textDirection: TextDirection.rtl,
         children: <Widget>[
           Text(
-            'حساب کاربری ندارید؟',
+            'حساب کاربری دارید؟',
             textDirection: TextDirection.rtl,
             style: TextStyle(
                 fontFamily: 'vazir', fontSize: 13, fontWeight: FontWeight.w500),
@@ -150,12 +154,10 @@ class _SignInPageState extends State<SignInPage> {
           SizedBox(width: 5),
           GestureDetector(
             onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return SignUpPage();
-              }));
+              Navigator.pop(context);
             },
             child: Text(
-              'ایجاد حساب',
+              'ورود',
               textDirection: TextDirection.rtl,
               style: TextStyle(
                 color: thirdColor,

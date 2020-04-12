@@ -49,6 +49,10 @@ flutter:
     - assets/images/ambol.png
     - assets/images/cityView.jpg
     - assets/images/illustration.png
+    - assets/images/accident.png
+    - assets/images/emergency.png
+    - assets/images/fire.png
+    - assets/images/suside.png
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.

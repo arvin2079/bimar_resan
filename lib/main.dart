@@ -1,5 +1,4 @@
-import 'package:bimarresan/pages/signIn.dart';
-import 'package:bimarresan/pages/welcomeFile.dart';
+import 'package:bimarresan/pages/mainMenu.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -21,7 +20,7 @@ class MyApp extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       title: 'bimar-resan',
-      home: WelcomePage(),
+      home: MainMenu(),
     );
   }
 }

@@ -1,8 +1,7 @@
+import 'package:bimarresan/components/mainMenuButton.dart';
+import 'package:bimarresan/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_svg/svg.dart';
-
-import '../../constants.dart';
 
 class HomeTab extends StatelessWidget {
   @override
@@ -15,7 +14,31 @@ class HomeTab extends StatelessWidget {
         ),
         CustomButton(
           text: 'فوریت پزشکی',
-          iconSVG: 'assset/images/group22.svg',
+          leftColor: secondaryColor,
+          rightColor: primaryColor,
+          iconSVG: 'assets/images/group24.svg',
+          onPressed: () {},
+        ),
+        CustomButton(
+          text: 'صوانح جاده ای',
+          leftColor: button21Color,
+          rightColor: button22Color,
+          iconSVG: 'assets/images/group23.svg',
+          onPressed: () {},
+        ),
+        CustomButton(
+          text: 'سوختگی',
+          leftColor: button32Color,
+          rightColor: button31Color,
+          iconSVG: 'assets/images/group24.svg',
+          onPressed: () {},
+        ),
+        CustomButton(
+          text: 'خودکشی',
+          leftColor: button42Color,
+          rightColor: button41Color,
+          iconSVG: 'assets/images/group26.svg',
+          onPressed: () {},
         ),
         SizedBox(
           height: 65,
@@ -25,77 +48,5 @@ class HomeTab extends StatelessWidget {
   }
 }
 
-class CustomButton extends StatelessWidget {
-  const CustomButton(
-      {@required this.iconSVG,
-      @required this.text,
-      @required this.backgroundImage});
 
-  final String iconSVG;
-  final String text;
-  final String backgroundImage;
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      clipBehavior: Clip.antiAliasWithSaveLayer,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      child: Container(
-        height: 90,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.centerLeft,
-            end: Alignment.centerRight,
-            colors: [secondaryColor, primaryColor],
-          )
-        ),
-        child: Stack(
-          alignment: Alignment.center,
-          children: <Widget>[
-            Positioned(
-              left: 10,
-              top: -10,
-              child: Opacity(
-                opacity: 0.2,
-                child: SvgPicture.asset(
-                  'assets/images/group24.svg',
-                  height: 150,
-                  width: 150,
-                ),
-              ),
-            ),
-            Positioned(
-              left: 25,
-              child: Icon(
-                Icons.arrow_back_ios,
-                color: Colors.white,
-              ),
-            ),
-            Positioned(
-              right: 80,
-              child: Text(
-                text,
-                style: TextStyle(
-                  color: Colors.white,
-                  fontFamily: 'vazir',
-                  fontSize: 20,
-                  fontWeight: FontWeight.w100,
-                ),
-              ),
-            ),
-            Positioned(
-              right: 30,
-              child: SvgPicture.asset(
-                'assets/images/group24.svg',
-                height: 30,
-                width: 30,
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
+//todo : put inkwell for it and make it clickable

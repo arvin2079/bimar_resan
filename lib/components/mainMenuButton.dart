@@ -5,6 +5,7 @@ import 'package:flutter_svg/svg.dart';
 class CustomButton extends StatelessWidget {
   const CustomButton(
       {this.onPressed,
+      this.solidColor,
       @required this.iconSVG,
       @required this.text,
       @required this.rightColor,
@@ -15,6 +16,7 @@ class CustomButton extends StatelessWidget {
   final Color rightColor;
   final Color leftColor;
   final Function onPressed;
+  final Color solidColor;
 
   @override
   Widget build(BuildContext context) {
@@ -35,11 +37,12 @@ class CustomButton extends StatelessWidget {
               ),
             )
           ],
-          gradient: LinearGradient(
+          gradient: solidColor != null ? null : LinearGradient(
             begin: Alignment.centerLeft,
             end: Alignment.centerRight,
             colors: [leftColor, rightColor],
           ),
+          color: solidColor,
         ),
         child: Material(
           type: MaterialType.transparency,

@@ -4,6 +4,7 @@ const Color primaryColor = Color(0xFFBD8AE0);
 const Color secondaryColor = Color(0xFF6668D9);
 const Color thirdColor = Color(0xFF997CDD);
 const Color navBarDisableColor = Color(0xFFB4B4B4);
+const Color seenMessagesColor = Color(0xFF707070);
 
 const Color button21Color = Color(0xFF51A9F8);
 const Color button22Color = Color(0xFF5267FF);

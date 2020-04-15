@@ -8,7 +8,8 @@ class CustomButton extends StatelessWidget {
       this.solidColor,
       this.fontColor = Colors.white,
       this.iconShadow = true,
-        this.arrowColor = Colors.white,
+      this.showArrow = true,
+      this.arrowColor = Colors.white,
       @required this.iconSVG,
       @required this.text,
       @required this.rightColor,
@@ -23,6 +24,7 @@ class CustomButton extends StatelessWidget {
   final Function onPressed;
   final Color solidColor;
   final bool iconShadow;
+  final bool showArrow;
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +43,7 @@ class CustomButton extends StatelessWidget {
                 0.0, // horizontal, move right 10
                 5.0, // vertical, move down 10
               ),
-            )
+            ),
           ],
           gradient: solidColor != null
               ? null
@@ -63,13 +65,7 @@ class CustomButton extends StatelessWidget {
               alignment: Alignment.center,
               children: <Widget>[
                 _buildIconShadow(),
-                Positioned(
-                  left: 25,
-                  child: Icon(
-                    Icons.arrow_back_ios,
-                    color: arrowColor,
-                  ),
-                ),
+                _buildArrowForward(),
                 Positioned(
                   right: 80,
                   child: Text(
@@ -98,18 +94,30 @@ class CustomButton extends StatelessWidget {
     );
   }
 
-  Widget _buildIconShadow() {
-    return iconShadow ? Positioned(
-      left: 10,
-      top: -10,
-      child: Opacity(
-        opacity: 0.2,
-        child: SvgPicture.asset(
-          iconSVG,
-          height: 150,
-          width: 150,
-        ),
+  Widget _buildArrowForward() {
+    return showArrow ? Positioned(
+      left: 25,
+      child: Icon(
+        Icons.arrow_back_ios,
+        color: arrowColor,
       ),
     ) : Container();
+  }
+
+  Widget _buildIconShadow() {
+    return iconShadow
+        ? Positioned(
+            left: 10,
+            top: -10,
+            child: Opacity(
+              opacity: 0.2,
+              child: SvgPicture.asset(
+                iconSVG,
+                height: 150,
+                width: 150,
+              ),
+            ),
+          )
+        : Container();
   }
 }

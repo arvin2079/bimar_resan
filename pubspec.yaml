@@ -55,6 +55,8 @@ flutter:
     - assets/images/group24.svg
     - assets/images/group25.svg
     - assets/images/group26.svg
+    - assets/images/doctorIcon.svg
+    - assets/images/doctorIcon2.svg
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.

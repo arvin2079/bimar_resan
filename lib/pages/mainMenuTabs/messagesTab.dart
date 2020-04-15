@@ -25,7 +25,7 @@ class MessageTab extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             children: <Widget>[
               Text(
-                'درخواست سریع فوریت با یک کلیک',
+                'ارتباط شما با پشتیبانی',
                 style: TextStyle(
                     color: navBarDisableColor,
                     fontFamily: 'vazir',
@@ -48,3 +48,5 @@ class MessageTab extends StatelessWidget {
 }
 
 // TODO : give a list of messages to message card
+
+// TODO : sending message??

@@ -15,6 +15,9 @@ class MainMenu extends StatefulWidget {
 
 class _MainMenuState extends State<MainMenu> {
   int _selectedIndex = 0;
+  String _title = 'مشکلی پیش اومده!؟';
+  String _subtitle = 'ما با بیمار رسان کمکت میکنیم';
+
   final TextStyle selectedLabelStyle = TextStyle(
     color: navBarDisableColor,
     fontFamily: 'vazir',
@@ -32,6 +35,24 @@ class _MainMenuState extends State<MainMenu> {
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
+      switch (_selectedIndex) {
+        case 0:
+          _title = 'مشکلی پیش اومده!؟';
+          _subtitle = 'ما با بیمار رسان کمکت میکنیم';
+          break;
+        case 1:
+          _title = '!چقدر پیام برات اومده';
+          _subtitle = 'یه سری به اینجا بزن ببین چه خبره';
+          break;
+        case 2:
+          _title = 'الان دقیقا کجایی!؟';
+          _subtitle = 'دقیق بگو کجایی تا کمکت کنیم';
+          break;
+        case 3:
+          _title = '!به به ببین کی اومده';
+          _subtitle = '!حالت چطوره؟';
+          break;
+      }
     });
   }
 
@@ -87,7 +108,7 @@ class _MainMenuState extends State<MainMenu> {
             top: 60,
             right: 15,
             child: Text(
-              'مشکلی پیش اومده!؟',
+              _title,
               textAlign: TextAlign.right,
               style: TextStyle(
                 fontSize: 25,
@@ -101,7 +122,7 @@ class _MainMenuState extends State<MainMenu> {
             top: 95,
             right: 15,
             child: Text(
-              'ما با بیمار رسان کمکت میکنیم',
+              _subtitle,
               textAlign: TextAlign.right,
               style: TextStyle(
                 fontSize: 14,

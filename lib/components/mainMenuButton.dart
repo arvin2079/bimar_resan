@@ -6,6 +6,9 @@ class CustomButton extends StatelessWidget {
   const CustomButton(
       {this.onPressed,
       this.solidColor,
+      this.fontColor = Colors.white,
+      this.iconShadow = true,
+        this.arrowColor = Colors.white,
       @required this.iconSVG,
       @required this.text,
       @required this.rightColor,
@@ -13,10 +16,13 @@ class CustomButton extends StatelessWidget {
 
   final String iconSVG;
   final String text;
+  final Color fontColor;
+  final Color arrowColor;
   final Color rightColor;
   final Color leftColor;
   final Function onPressed;
   final Color solidColor;
+  final bool iconShadow;
 
   @override
   Widget build(BuildContext context) {
@@ -37,11 +43,13 @@ class CustomButton extends StatelessWidget {
               ),
             )
           ],
-          gradient: solidColor != null ? null : LinearGradient(
-            begin: Alignment.centerLeft,
-            end: Alignment.centerRight,
-            colors: [leftColor, rightColor],
-          ),
+          gradient: solidColor != null
+              ? null
+              : LinearGradient(
+                  begin: Alignment.centerLeft,
+                  end: Alignment.centerRight,
+                  colors: [leftColor, rightColor],
+                ),
           color: solidColor,
         ),
         child: Material(
@@ -54,23 +62,12 @@ class CustomButton extends StatelessWidget {
             child: Stack(
               alignment: Alignment.center,
               children: <Widget>[
-                Positioned(
-                  left: 10,
-                  top: -10,
-                  child: Opacity(
-                    opacity: 0.2,
-                    child: SvgPicture.asset(
-                      iconSVG,
-                      height: 150,
-                      width: 150,
-                    ),
-                  ),
-                ),
+                _buildIconShadow(),
                 Positioned(
                   left: 25,
                   child: Icon(
                     Icons.arrow_back_ios,
-                    color: Colors.white,
+                    color: arrowColor,
                   ),
                 ),
                 Positioned(
@@ -78,7 +75,7 @@ class CustomButton extends StatelessWidget {
                   child: Text(
                     text,
                     style: TextStyle(
-                      color: Colors.white,
+                      color: fontColor,
                       fontFamily: 'vazir',
                       fontSize: 20,
                       fontWeight: FontWeight.w100,
@@ -99,5 +96,20 @@ class CustomButton extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Widget _buildIconShadow() {
+    return iconShadow ? Positioned(
+      left: 10,
+      top: -10,
+      child: Opacity(
+        opacity: 0.2,
+        child: SvgPicture.asset(
+          iconSVG,
+          height: 150,
+          width: 150,
+        ),
+      ),
+    ) : Container();
   }
 }

@@ -63,78 +63,74 @@ class _SignUpPageState extends State<SignUpPage> {
 
   Positioned _buildSignInForm(BuildContext context) {
     return Positioned(
-              top: 180,
-              bottom: 0.0,
-              child: SingleChildScrollView(
-                child: Container(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: <Widget>[
-                      SizedBox(height: 20),
-                      Container(
-                        height: 290,
-                        width: MediaQuery.of(context).size.width - 20,
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.stretch,
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: <Widget>[
-                            Expanded(
-                              child: Padding(
-                                padding: EdgeInsets.only(right: 5),
-                                child: Card(
-                                  elevation: 2,
-                                  shape: BeveledRectangleBorder(
-                                    borderRadius: BorderRadius.circular(0),
+      top: 180,
+      bottom: 0.0,
+      child: SingleChildScrollView(
+        child: Container(
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: <Widget>[
+              SizedBox(height: 20),
+              Container(
+                height: 290,
+                width: MediaQuery.of(context).size.width - 20,
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    Expanded(
+                      child: Padding(
+                        padding: EdgeInsets.only(right: 5),
+                        child: Card(
+                          elevation: 2,
+                          shape: BeveledRectangleBorder(
+                            borderRadius: BorderRadius.circular(0),
+                          ),
+                          child: Padding(
+                            padding: EdgeInsets.only(
+                                right: 25, left: 25, top: 10, bottom: 10),
+                            child: SingleChildScrollView(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.stretch,
+                                children: <Widget>[
+                                  Text(
+                                    'ثبت نام',
+                                    textAlign: TextAlign.right,
+                                    style: TextStyle(
+                                        fontFamily: 'vazir',
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 33),
                                   ),
-                                  child: Padding(
-                                    padding: EdgeInsets.only(
-                                        right: 25,
-                                        left: 25,
-                                        top: 10,
-                                        bottom: 10),
-                                    child: SingleChildScrollView(
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.stretch,
-                                        children: <Widget>[
-                                          Text(
-                                            'ثبت نام',
-                                            textAlign: TextAlign.right,
-                                            style: TextStyle(
-                                                fontFamily: 'vazir',
-                                                fontWeight: FontWeight.w500,
-                                                fontSize: 33),
-                                          ),
-                                          CustomTextField(
-                                            labelText: 'نام و نام خانوادگی',
-                                            borderColor: thirdColor,
-                                          ),
-                                          CustomTextField(
-                                            labelText: 'شماره همراه',
-                                            borderColor: thirdColor,
-                                          ),
-                                          CustomTextField(
-                                            labelText: 'کد ملی',
-                                            borderColor: thirdColor,
-                                          ),
-                                        ],
-                                      ),
-                                    ),
+                                  CustomTextField(
+                                    labelText: 'نام و نام خانوادگی',
+                                    borderColor: thirdColor,
                                   ),
-                                ),
+                                  CustomTextField(
+                                    labelText: 'شماره همراه',
+                                    borderColor: thirdColor,
+                                  ),
+                                  CustomTextField(
+                                    labelText: 'کد ملی',
+                                    borderColor: thirdColor,
+                                  ),
+                                ],
                               ),
                             ),
-                            Line(color: thirdColor),
-                          ],
+                          ),
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                    Line(color: thirdColor),
+                  ],
                 ),
               ),
-            );
+            ],
+          ),
+        ),
+      ),
+    );
   }
 
   Positioned _buildSwitchPageButton(BuildContext context) {

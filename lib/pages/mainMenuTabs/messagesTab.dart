@@ -1,5 +1,6 @@
 import 'package:bimarresan/components/customMessageCard.dart';
 import 'package:bimarresan/components/shapes.dart';
+import 'package:bimarresan/components/titleDot.dart';
 import 'package:bimarresan/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
@@ -9,7 +10,6 @@ class MessageTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     // TODO : fill the _messages with messages
 
     return Container(
@@ -21,23 +21,7 @@ class MessageTab extends StatelessWidget {
           SizedBox(
             height: 250,
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: <Widget>[
-              Text(
-                'ارتباط شما با پشتیبانی',
-                style: TextStyle(
-                    color: navBarDisableColor,
-                    fontFamily: 'vazir',
-                    fontWeight: FontWeight.w500,
-                    fontSize: 15),
-              ),
-              CircleShape(
-                color: thirdColor,
-                diameter: 10,
-              )
-            ],
-          ),
+          TitleDot(text: 'ارتباط شما با پشتیبانی'),
           CustomCard(
             list: _messages,
           ),

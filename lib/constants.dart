@@ -15,6 +15,9 @@ const Color button32Color = Color(0xFFF5D061);
 const Color button41Color = Color(0xFF36E187);
 const Color button42Color = Color(0xFF63A3DF);
 
+const Color profileSendButtonColor1 = Color(0xFF5169FF);
+const Color profileSendButtonColor2 = Color(0xFF51A8F8);
+
 
 
 

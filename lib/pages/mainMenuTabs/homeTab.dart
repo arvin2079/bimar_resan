@@ -1,5 +1,6 @@
 import 'package:bimarresan/components/mainMenuButton.dart';
 import 'package:bimarresan/components/shapes.dart';
+import 'package:bimarresan/components/titleDot.dart';
 import 'package:bimarresan/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
@@ -31,23 +32,7 @@ class HomeTab extends StatelessWidget {
             ),
             Padding(
               padding: EdgeInsets.only(right: 10),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: <Widget>[
-                  Text(
-                    'درخواست سریع فوریت با یک کلیک',
-                    style: TextStyle(
-                        color: navBarDisableColor,
-                        fontFamily: 'vazir',
-                        fontWeight: FontWeight.w500,
-                        fontSize: 15),
-                  ),
-                  CircleShape(
-                    color: thirdColor,
-                    diameter: 10,
-                  )
-                ],
-              ),
+              child: TitleDot(text: 'درخواست سریع فوریت با یک کلیک'),
             ),
             CustomButton(
               text: 'فوریت پزشکی',

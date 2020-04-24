@@ -1,7 +1,9 @@
 import 'package:bimarresan/components/customTextField.dart';
 import 'package:bimarresan/components/nextButton.dart';
 import 'package:bimarresan/components/shapes.dart';
+import 'package:bimarresan/components/SlidePageRoute.dart';
 import 'package:bimarresan/pages/signUp.dart';
+import 'package:bimarresan/pages/welcomeFile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/widgets.dart';
@@ -64,74 +66,74 @@ class _SignInPageState extends State<SignInPage> {
 
   Positioned _buildSignInForm(BuildContext context) {
     return Positioned(
-              top: 180.0,
-              bottom: 0.0,
-              child: SingleChildScrollView(
-                child: Container(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: <Widget>[
-                      SizedBox(height: 20),
-                      Container(
-                        height: 230,
-                        width: MediaQuery.of(context).size.width - 20,
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.stretch,
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: <Widget>[
-                            Expanded(
-                              child: Padding(
-                                padding: EdgeInsets.only(right: 5),
-                                child: Card(
-                                  elevation: 2,
-                                  shape: BeveledRectangleBorder(
-                                    borderRadius: BorderRadius.circular(0),
+      top: 180.0,
+      bottom: 0.0,
+      child: SingleChildScrollView(
+        child: Container(
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: <Widget>[
+              SizedBox(height: 20),
+              Container(
+                height: 230,
+                width: MediaQuery.of(context).size.width - 20,
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    Expanded(
+                      child: Padding(
+                        padding: EdgeInsets.only(right: 5),
+                        child: Card(
+                          elevation: 2,
+                          shape: BeveledRectangleBorder(
+                            borderRadius: BorderRadius.circular(0),
+                          ),
+                          child: Padding(
+                            padding: EdgeInsets.only(
+                                right: 25,
+                                left: 25,
+                                top: 10,
+                                bottom: 10),
+                            child: SingleChildScrollView(
+                              child: Column(
+                                crossAxisAlignment:
+                                CrossAxisAlignment.stretch,
+                                children: <Widget>[
+                                  Text(
+                                    'ورود',
+                                    textAlign: TextAlign.right,
+                                    style: TextStyle(
+                                        fontFamily: 'vazir',
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 33),
                                   ),
-                                  child: Padding(
-                                    padding: EdgeInsets.only(
-                                        right: 25,
-                                        left: 25,
-                                        top: 10,
-                                        bottom: 10),
-                                    child: SingleChildScrollView(
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.stretch,
-                                        children: <Widget>[
-                                          Text(
-                                            'ورود',
-                                            textAlign: TextAlign.right,
-                                            style: TextStyle(
-                                                fontFamily: 'vazir',
-                                                fontWeight: FontWeight.w500,
-                                                fontSize: 33),
-                                          ),
-                                          CustomTextField(
-                                            labelText: 'شماره همراه',
-                                            borderColor: thirdColor,
-                                          ),
-                                          CustomTextField(
-                                            labelText: 'رمز عبور',
-                                            borderColor: thirdColor,
-                                          ),
-                                        ],
-                                      ),
-                                    ),
+                                  CustomTextField(
+                                    labelText: 'شماره همراه',
+                                    borderColor: thirdColor,
                                   ),
-                                ),
+                                  CustomTextField(
+                                    labelText: 'رمز عبور',
+                                    borderColor: thirdColor,
+                                  ),
+                                ],
                               ),
                             ),
-                            Line(color: thirdColor),
-                          ],
+                          ),
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                    Line(color: thirdColor),
+                  ],
                 ),
               ),
-            );
+            ],
+          ),
+        ),
+      ),
+    );
   }
 
   Positioned _buildSwitchPageButton(BuildContext context) {

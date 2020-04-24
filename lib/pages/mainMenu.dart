@@ -7,6 +7,7 @@ import 'package:bimarresan/pages/mainMenuTabs/profileTab.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
+import 'settingsPage.dart';
 
 class MainMenu extends StatefulWidget {
   @override
@@ -92,7 +93,10 @@ class _MainMenuState extends State<MainMenu> {
             top: 120,
             right: 290,
             child: RawMaterialButton(
-              onPressed: () {},
+              onPressed: () {
+                //fixme this button not working in home tab!
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>(SettingsPage())));
+              },
               child: new Icon(
                 Icons.settings,
                 color: Colors.white,
@@ -188,6 +192,7 @@ class _MainMenuState extends State<MainMenu> {
       statusBarColor: Colors.black.withOpacity(0.2),
       statusBarIconBrightness: Brightness.light,
     ));
+    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   }
 }
 

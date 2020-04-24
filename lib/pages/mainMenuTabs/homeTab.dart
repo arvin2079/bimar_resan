@@ -52,7 +52,7 @@ class HomeTab extends StatelessWidget {
               text: 'سوختگی',
               leftColor: button32Color,
               rightColor: button31Color,
-              iconSVG: 'assets/images/group24.svg',
+              iconSVG: 'assets/images/group25.svg',
               onPressed: () {},
             ),
             CustomButton(

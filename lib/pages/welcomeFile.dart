@@ -1,6 +1,7 @@
 import 'package:bimarresan/components/nextButton.dart';
 import 'package:bimarresan/constants.dart';
 import 'package:bimarresan/pages/signIn.dart';
+import 'package:bimarresan/components/SlidePageRoute.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
@@ -17,10 +18,10 @@ class WelcomePage extends StatelessWidget {
           height: double.infinity,
           decoration: BoxDecoration(
               gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [primaryColor, secondaryColor],
-          )),
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [primaryColor, secondaryColor],
+              )),
           child: SafeArea(
             child: Stack(
               alignment: Alignment.center,
@@ -56,19 +57,21 @@ class WelcomePage extends StatelessWidget {
                   ),
                 ),
                 Positioned(
-                  right: -18,
-                  bottom: MediaQuery.of(context).size.height/2 - 220,
-                  child: NextButton(
-                    onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) {
-                        return SignInPage();
-                      }));
-                    },
-                    text: 'بعدی',
-                    icon: Icons.arrow_forward_ios,
-                    color: Colors.white,
-                    contentColor: Colors.black,
-                  )
+                    right: -18,
+                    bottom: MediaQuery.of(context).size.height/2 - 220,
+                    child: NextButton(
+                      onPressed: () {
+                        Navigator.pushReplacement(context, SlideLeftRoute(page: SignInPage()));
+
+//                      Navigator.push(context, Slide(builder: (context) {
+//                        return SignInPage();
+//                      }));
+                      },
+                      text: 'بعدی',
+                      icon: Icons.arrow_forward_ios,
+                      color: Colors.white,
+                      contentColor: Colors.black,
+                    )
                 )
               ],
             ),
@@ -83,5 +86,7 @@ class WelcomePage extends StatelessWidget {
       statusBarColor: Colors.black.withOpacity(0.1),
       statusBarIconBrightness: Brightness.light,
     ));
+
+    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitDown]);
   }
 }

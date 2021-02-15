@@ -5,9 +5,12 @@ import '../constants.dart';
 import 'messageContainer.dart';
 
 class CustomCard extends StatelessWidget {
-  const CustomCard({this.list});
 
+
+  CustomCard({@required this.list, @required this.title, this.optionalButtonTitle});
+  final String title;
   final List<Widget> list;
+  String optionalButtonTitle;
 
   @override
   Widget build(BuildContext context) {
@@ -29,10 +32,10 @@ class CustomCard extends StatelessWidget {
     */
     return Container(
       margin: EdgeInsets.only(top: 20),
-      height: MediaQuery.of(context).size.height - 380,
+      height: MediaQuery.of(context).size.height - 30,
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(15),
+        borderRadius: BorderRadius.vertical(top: Radius.circular(15)),
         boxShadow: [
           BoxShadow(
             color: Colors.black26,
@@ -46,15 +49,38 @@ class CustomCard extends StatelessWidget {
         ],
       ),
       child: Padding(
-        padding: EdgeInsets.all(12),
+        padding: EdgeInsets.all(10),
+        //fixme its overflow under bottom navigation drawer
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Padding(
+                    padding: EdgeInsets.all(15),
+                    child: GestureDetector(
+                      onTap: (){
+                        //todo save settings changes
+                      },
+                      child: Text(
+                        optionalButtonTitle != null ? optionalButtonTitle : "",
+                        textAlign: TextAlign.right,
+                        style: TextStyle(
+                          fontFamily: 'vazir',
+                          fontWeight: FontWeight.w300,
+                          fontSize: 16,
+                          color: primaryColor,
+                        ),
+                      ),
+                    ),
+                  ),
                   Padding(
                     padding: EdgeInsets.all(15),
                     child: Text(
-                      ':صندوق پیام ها',
+                      title,
                       textAlign: TextAlign.right,
                       style: TextStyle(
                         fontFamily: 'vazir',
@@ -64,7 +90,9 @@ class CustomCard extends StatelessWidget {
                       ),
                     ),
                   ),
-                ] +
+                ],
+              ),
+            ] +
                 list,
           ),
         ),

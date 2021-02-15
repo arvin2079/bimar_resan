@@ -24,6 +24,7 @@ class MessageTab extends StatelessWidget {
           TitleDot(text: 'ارتباط شما با پشتیبانی'),
           CustomCard(
             list: _messages,
+            title: ":صندوف پیام ها",
           ),
         ],
       ),
